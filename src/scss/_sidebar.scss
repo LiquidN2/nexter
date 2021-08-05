@@ -1,0 +1,188 @@
+@use "variables" as *;
+
+$btn-bg: transparent;
+$btn-color: white;
+
+.nav {
+  &__checkbox {
+    display: none !important;
+  }
+
+  &__button {
+    z-index: 100;
+
+    display: inline-block;
+    height: 8rem;
+    width: 8rem;
+    background-color: $btn-bg;
+    cursor: pointer;
+
+    position: fixed;
+
+    @media only screen and (max-width: $bp-lg) {
+      height: 6rem;
+      width: 6rem;
+      right: 1rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 3.5rem;
+      height: 2px;
+      transition: all 0.2s;
+      background-color: $btn-color;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      margin-top: -1rem;
+    }
+
+    &::after {
+      margin-top: 1rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    margin-top: -1.2rem;
+  }
+
+  &__button:hover &__icon::after {
+    margin-top: 1.2rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    margin-top: 0;
+    transform: rotate(45deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    margin-top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+.sidebar {
+  background-color: $color-primary;
+  position: fixed;
+  width: 40rem;
+  height: 100vh;
+  padding: 10rem;
+  z-index: 50;
+  transform: translateX(-32rem);
+  transition: all 0.2s;
+
+  @media only screen and (max-width: $bp-lg) {
+    display: none;
+  }
+
+  &__menu {
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: $font-display;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+.sidebar-horizontal {
+  display: none;
+
+  @media only screen and (max-width: $bp-lg) {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 45rem;
+    background-color: $color-primary;
+    z-index: 40;
+    padding: 5rem;
+    justify-content: right;
+    align-content: center;
+
+    transform: translateY(-39rem);
+
+    transition: transform 0.2s;
+  }
+
+  &__menu {
+    list-style: none;
+    text-align: right;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: $font-display;
+    }
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+.nav__checkbox:checked ~ .sidebar {
+  transform: translateX(0);
+  box-shadow: 0 0.1rem 0.5rem rgba(#000, 0.3);
+}
+
+.nav__checkbox:checked ~ .sidebar-horizontal {
+  transform: translateY(0);
+  box-shadow: 0 0.1rem 0.5rem rgba(#000, 0.3);
+}
+
+.sidebar-grid-placeholder {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+
+  @media only screen and (max-width: $bp-lg) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+}

@@ -1,0 +1,49 @@
+.u-text-center {
+  text-align: center !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+// MARGINS
+$sm: 2rem;
+$md: 3rem;
+$lg: 4rem;
+$xl: 8rem;
+
+.u-mb {
+  &-sm {
+    margin-bottom: $sm;
+  }
+  &-md {
+    margin-bottom: $md;
+  }
+  &-lg {
+    margin-bottom: $lg;
+  }
+  &-xl {
+    margin-bottom: $xl;
+  }
+}
+
+.u-mt {
+  &-sm {
+    margin-top: $sm;
+  }
+  &-md {
+    margin-top: $md;
+  }
+  &-lg {
+    margin-top: $lg;
+  }
+  &-xl {
+    margin-top: $xl;
+  }
+}

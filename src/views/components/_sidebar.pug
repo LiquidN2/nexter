@@ -1,0 +1,44 @@
+-
+  var links = [
+    {
+      url: '#',
+      name: 'Home'
+    }, {
+      url: '#',
+      name: 'About Us'
+    }, {
+      url: '#',
+      name: 'our properties'
+    }, {
+      url: '#',
+      name: 'our realtors'
+    }, {
+      url: '#',
+      name: 'contact us'
+    }
+  ];
+
+
+button#btn-gobacktop.btn-gobacktop Top
+
+//NAV-BUTTON
+input#nav.nav__checkbox(type="checkbox")/
+label.nav__button(for="nav")
+  span.nav__icon
+
+//GRID-PLACEHOLDER
+.sidebar-grid-placeholder
+
+//SIDEBAR - for desktop
+.sidebar
+  ul.sidebar__menu
+    each link in links
+      li.sidebar__item
+        a.sidebar__link(href=`${link.url}`) #{ link.name }
+
+//SIDEBAR - Horizontal for mobile and tablet
+.sidebar-horizontal
+  ul.sidebar-horizontal__menu
+    each link in links
+      li.sidebar-horizontal__item
+        a.sidebar-horizontal__link(href=`${link.url}`) #{ link.name }

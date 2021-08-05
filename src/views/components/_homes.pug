@@ -1,0 +1,92 @@
+-
+  function formatComma(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  var homes = [
+    {
+      picFileName: 'house-1.jpeg',
+      picAltName: 'House 1',
+      heading: 'Beautiful Family Name',
+      location: 'USA',
+      rooms: 5,
+      area: 325,
+      price: 1200000
+    }, {
+      picFileName: 'house-2.jpeg',
+      picAltName: 'House 2',
+      heading: 'Modern Glass Villa',
+      location: 'Canada',
+      rooms: 6,
+      area: 450,
+      price: 2750000
+    }, {
+      picFileName: 'house-3.jpeg',
+      picAltName: 'House 3',
+      heading: 'Cozy Country House',
+      location: 'UK',
+      rooms: 4,
+      area: 250,
+      price: 850000
+    }, {
+      picFileName: 'house-4.jpeg',
+      picAltName: 'House 4',
+      heading: 'Large Rustical Villa',
+      location: 'Portugal',
+      rooms: 6,
+      area: 480,
+      price: 1950000
+    }, {
+      picFileName: 'house-5.jpeg',
+      picAltName: 'House 5',
+      heading: 'Majestic Palace House',
+      location: 'Germany',
+      rooms: 18,
+      area: 4230,
+      price: 9500000
+    }, {
+      picFileName: 'house-6.jpeg',
+      picAltName: 'House 6',
+      heading: 'Modern Familiy Apartment',
+      location: 'Italy',
+      rooms: 3,
+      area: 180,
+      price: 600000
+    }
+  ];
+
+section.homes
+  each home in homes
+    .home
+      img.home__picture(
+        src=`img/${home.picFileName}`,
+        alt=`${home.picAltName}`
+      )/
+
+      button.btn-like.home__like
+        svg
+          use(xlink:href="img/sprite.svg#icon-heart-full")
+
+      h5.home__heading= home.heading
+
+      .home__location
+        svg
+          use(xlink:href="img/sprite.svg#icon-map-pin")
+        p= home.location
+
+      .home__rooms
+        svg
+          use(xlink:href="img/sprite.svg#icon-profile-male")
+        p= `${home.rooms} ${home.rooms > 1 ? 'rooms' : 'room'}`
+
+      .home__area
+        svg
+          use(xlink:href="img/sprite.svg#icon-expand")
+        p #{ formatComma(home.area) } m<sup>2</sup>
+
+      .home__price
+        svg
+          use(xlink:href="img/sprite.svg#icon-key")
+        p $#{ formatComma(home.price) }
+
+      button.btn.home__btn Contact Realtor

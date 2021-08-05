@@ -1,0 +1,50 @@
+@use "variables" as *;
+
+.btn {
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: $font-display;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.btn-like {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-gobacktop {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  bottom: 3rem;
+  right: 3rem;
+
+  height: 7rem;
+  width: 7rem;
+  border: none;
+  background-color: $color-primary;
+  border-radius: 50%;
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+
+  transition: all 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

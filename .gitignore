@@ -1,0 +1,8 @@
+/.idea
+/dist/img
+/dist/js
+/dist/*.html
+/dist/*.css
+/dist/*.css.map
+/node_modules
+package-lock.json

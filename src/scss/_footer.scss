@@ -1,0 +1,50 @@
+@use "variables" as *;
+
+.footer {
+  background-color: $color-secondary;
+  grid-column: full-start / full-end;
+  padding: 8rem;
+}
+
+.nav {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-column-gap: 2.5rem;
+
+  justify-items: center;
+  align-items: center;
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: #fff;
+      font-size: 1.4rem;
+
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.05);
+    }
+  }
+}
+
+.copyright {
+  width: 70%;
+  margin-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: $color-grey-light-2;
+  text-align: center;
+  font-size: 1.4rem;
+}

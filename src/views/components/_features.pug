@@ -1,0 +1,36 @@
+-
+  var features = [
+    {
+      icon: 'icon-global',
+      heading: 'World\'s Best Luxury Homes',
+      text: 'Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia.'
+    },{
+      icon: 'icon-trophy',
+      heading: 'Only the best properties',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus.'
+    },{
+      icon: 'icon-map-pin',
+      heading: 'All homes in top locations',
+      text: 'Tenetur distinctio necessitatibus pariatur voluptatibus quidem distinctio necessitatibus consequatur harum.'
+    },{
+      icon: 'icon-key',
+      heading: 'New home in one week',
+      text: 'Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+    },{
+      icon: 'icon-presentation',
+      heading: 'Top 1% realtors',
+      text: 'Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus.'
+    },{
+      icon: 'icon-lock',
+      heading: 'Secure payments on nexter',
+      text: 'Pariatur voluptatibus quidem consequatur harum, voluptatum pariatur voluptatibus mollitia quae.'
+    }
+  ];
+
+section.features
+  each feature in features
+    .feature
+      svg.feature__icon
+        use(xlink:href=`img/sprite.svg#${feature.icon}`)
+      h4.heading-4.heading-4--dark= feature.heading
+      p.feature__text= feature.text

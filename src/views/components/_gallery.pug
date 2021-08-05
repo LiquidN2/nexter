@@ -1,0 +1,5 @@
+section.gallery
+  - for (let i = 1; i <= 14; i++) {
+    figure(class=`gallery__item gallery__item--${i}`)
+      img.gallery__img(src=`img/gal-${i}.jpeg`, alt=`Gallery image ${i}`)/
+  - }
